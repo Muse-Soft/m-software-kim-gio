@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kim Giờ — Tiệm đồng hồ thủ công</title>
+<meta name="description" content="Kim Giờ — tiệm đồng hồ thủ công: bộ sưu tập, quy trình chế tác, câu chuyện atelier và dịch vụ bảo dưỡng. Mọi ảnh trên trang đều là ảnh mẫu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0E8;--bg2:#EAE0CE;--ink:#1C1A17;--muted:#5C5348;--gold:#B08D57;--gold-dark:#8C6F3F;--white:#FFFFFF;--line:#D8CDB8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:17px;line-height:1.65}
+img{display:block;width:100%;object-fit:cover}
+a{color:var(--gold-dark)}a:hover{color:var(--gold)}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;margin:0 0 12px}
+h1{font-size:56px;line-height:1.15}h2{font-size:36px;line-height:1.25}h3{font-size:22px;line-height:1.3}
+.eyebrow{font-size:14px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dark);font-weight:600}
+.lead{color:var(--muted);max-width:680px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+header{position:sticky;top:0;height:64px;background:var(--bg);border-bottom:1px solid var(--line);z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:"Playfair Display",Georgia,serif;font-size:26px;font-weight:600;color:var(--ink);text-decoration:none}
+.menu{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.menu a{color:var(--ink);text-decoration:none;font-size:16px}.menu a:hover{color:var(--gold-dark)}
+.btn{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;padding:12px 24px;border-radius:2px;border:0;cursor:pointer;font-family:inherit;font-size:16px}
+.btn:hover{background:var(--gold-dark);color:#fff}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:2px;padding:8px 12px;font-size:16px;cursor:pointer;color:var(--ink)}
+.hero{padding:0;position:relative;background:var(--ink)}
+.hero .frame{aspect-ratio:16/9;width:100%;max-height:100vh;overflow:hidden}
+.hero img{height:100%;filter:saturate(1.05)}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:48px 0;background:linear-gradient(transparent,rgba(28,26,23,.88));color:#fff}
+.hero-text p{color:#EAE0CE;max-width:640px}
+.hero-text .btn{margin-top:8px}
+.grid{display:grid;gap:28px}
+.collection{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--white);border:1px solid var(--line)}
+.card .frame{aspect-ratio:4/5;overflow:hidden}
+.card-body{padding:18px}
+.price{color:var(--gold-dark);font-weight:600;font-size:19px}
+.note{color:var(--muted);font-size:14px;line-height:1.5}
+.process{grid-template-columns:repeat(4,1fr)}
+.process .frame{aspect-ratio:3/2;overflow:hidden}
+.step-num{color:var(--gold);font-family:"Playfair Display",Georgia,serif;font-size:28px}
+.story{background:var(--ink);color:#fff}
+.story p{color:#EAE0CE}
+.story .grid{grid-template-columns:1.1fr .9fr;align-items:center}
+.story .frame{aspect-ratio:4/3;overflow:hidden}
+.story .frame.small{aspect-ratio:1/1;margin-top:20px}
+.services .grid{grid-template-columns:repeat(3,1fr)}
+.services .frame{aspect-ratio:3/2;overflow:hidden}
+.contact{background:var(--bg2)}
+.contact .grid{grid-template-columns:1fr 1.2fr;align-items:start}
+form{background:var(--white);border:1px solid var(--line);padding:28px;display:grid;gap:16px}
+label{font-size:15px;font-weight:600}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:2px;font:inherit;background:var(--white)}
+.demo-msg{display:none;border:1px solid var(--gold);background:var(--bg);padding:14px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:15px}
+footer a{color:var(--muted)}
+@media(max-width:768px){
+  h1{font-size:36px}
+  section{padding:56px 0}
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 24px;border-bottom:1px solid var(--line);gap:14px}
+  .menu.open{display:flex}
+  .menu-btn{display:inline-block}
+  .nav .btn{display:none}
+  .collection,.process,.services .grid,.story .grid,.contact .grid{grid-template-columns:1fr}
+  .hero .frame{aspect-ratio:16/9;max-height:none}
+  .hero-text{position:static;background:var(--ink);padding:24px 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Kim Giờ</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">☰ Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#bo-suu-tap">Bộ sưu tập</a></li>
+      <li><a href="#quy-trinh">Quy trình</a></li>
+      <li><a href="#cau-chuyen">Câu chuyện</a></li>
+      <li><a href="#bao-duong">Bảo dưỡng</a></li>
+      <li><a href="#lien-he">Liên hệ</a></li>
+    </ul>
+    <a class="btn" href="#lien-he">Đặt lịch hẹn</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Giới thiệu">
+    <div class="frame">
+      <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1920&auto=format&fit=crop" alt="Cận cảnh bộ máy cơ đồng hồ dưới ánh sáng ấm (ảnh mẫu)">
+    </div>
+    <div class="hero-text"><div class="wrap">
+      <p class="eyebrow">Tiệm đồng hồ thủ công</p>
+      <h1>Kim Giờ — thời gian được làm bằng tay</h1>
+      <p>Mỗi chiếc đồng hồ bắt đầu từ một bộ máy cơ, được tháo ra, lắp lại và căn chỉnh tỉ mỉ trước khi đến tay người đeo.</p>
+      <a class="btn" href="#bo-suu-tap">Xem bộ sưu tập</a>
+    </div></div>
+  </section>
+
+  <section id="bo-suu-tap">
+    <div class="wrap">
+      <p class="eyebrow">Bộ sưu tập</p>
+      <h2>Những mẫu đồng hồ làm nên Kim Giờ</h2>
+      <p class="lead">Ảnh lớn, mặt số rõ, dây da đồng tông ấm — đúng phong cách nhiếp ảnh đồng hồ cổ điển kiểu atelier Thụy Sĩ.</p>
+      <div class="grid collection" style="margin-top:32px">
+        <article class="card">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop" alt="Mẫu đồng hồ mặt số sáng, dây da nâu (ảnh mẫu)" loading="lazy"></div>
+          <div class="card-body"><h3>Kim Giờ Cổ Điển</h3><p class="note">Mặt số kem, dây da nâu, kim mảnh.</p><p class="price">12.500.000 ₫</p><p class="note">Giá mẫu</p></div>
+        </article>
+        <article class="card">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1200&auto=format&fit=crop" alt="Mẫu đồng hồ mặt số tối trên nền ấm (ảnh mẫu)" loading="lazy"></div>
+          <div class="card-body"><h3>Kim Giờ Atelier</h3><p class="note">Mặt số tối, viền vàng đồng, dây da sẫm.</p><p class="price">18.900.000 ₫</p><p class="note">Giá mẫu</p></div>
+        </article>
+        <article class="card">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=1200&auto=format&fit=crop" alt="Mẫu đồng hồ mặt số đen cận cảnh (ảnh mẫu)" loading="lazy"></div>
+          <div class="card-body"><h3>Kim Giờ Đêm</h3><p class="note">Mặt số đen, kim sáng, đeo hằng ngày.</p><p class="price">9.800.000 ₫</p><p class="note">Giá mẫu</p></div>
+        </article>
+        <article class="card">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1200&auto=format&fit=crop" alt="Mẫu đồng hồ đeo tay dưới ánh sáng ấm (ảnh mẫu)" loading="lazy"></div>
+          <div class="card-body"><h3>Kim Giờ Hành Trình</h3><p class="note">Vỏ gọn, dây da mềm, dễ phối đồ.</p><p class="price">14.200.000 ₫</p><p class="note">Giá mẫu</p></div>
+        </article>
+      </div>
+      <p class="note" style="margin-top:20px">Tất cả ảnh trên trang này đều là ảnh mẫu, không phải ảnh thật của tiệm.</p>
+    </div>
+  </section>
+
+  <section id="quy-trinh" style="background:var(--bg2)">
+    <div class="wrap">
+      <p class="eyebrow">Quy trình chế tác</p>
+      <h2>Bốn bước, không đốt cháy giai đoạn</h2>
+      <div class="grid process" style="margin-top:32px">
+        <article><div class="frame"><img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?q=80&w=1200&auto=format&fit=crop" alt="Cận cảnh chi tiết máy cơ đồng hồ (ảnh mẫu)" loading="lazy"></div><p class="step-num">01</p><h3>Tháo máy</h3><p>Tháo từng chi tiết, ghi nhận tình trạng máy trước khi chạm vào bất cứ bánh răng nào.</p></article>
+        <article><div class="frame"><img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=1200&auto=format&fit=crop" alt="Bàn tay thợ đang làm việc với đồng hồ (ảnh mẫu)" loading="lazy"></div><p class="step-num">02</p><h3>Lắp ráp</h3><p>Lắp lại bộ máy bằng tay, từng chi tiết khớp nhau mới qua bước tiếp theo.</p></article>
+        <article><div class="frame"><img src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?q=80&w=1200&auto=format&fit=crop" alt="Bánh răng bộ máy cơ cận cảnh (ảnh mẫu)" loading="lazy"></div><p class="step-num">03</p><h3>Căn chỉnh</h3><p>Căn chỉnh độ chính xác của bộ máy cho đến khi kim chạy đều và ổn định.</p></article>
+        <article><div class="frame"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1200&auto=format&fit=crop" alt="Đồng hồ sau khi hoàn thiện dưới ánh sáng ấm (ảnh mẫu)" loading="lazy"></div><p class="step-num">04</p><h3>Kiểm tra 48 giờ</h3><p>Đồng hồ được theo dõi liên tục 48 giờ trước khi bàn giao, để chắc chắn không lệch nhịp.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="cau-chuyen">
+    <div class="wrap"><div class="grid">
+      <div>
+        <p class="eyebrow">Câu chuyện atelier</p>
+        <h2>Một xưởng nhỏ, làm chậm mà chắc</h2>
+        <p>Kim Giờ là một atelier đồng hồ thủ công: thợ làm việc trực tiếp với từng bộ máy, từng chiếc kim, từng sợi dây da. Không có dây chuyền vội vã — mỗi chiếc đồng hồ ra khỏi xưởng đều đã đi qua bàn tay người thợ và bài kiểm tra 48 giờ.</p>
+        <p>Chúng tôi không kể tên thợ hay năm thành lập mà chưa có thông tin xác nhận; điều duy nhất chúng tôi cam kết là cách làm: chậm, tỉ mỉ, và trung thực với từng chi tiết máy.</p>
+      </div>
+      <div>
+        <div class="frame"><img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1200&auto=format&fit=crop" alt="Đồng hồ trên bàn làm việc của atelier (ảnh mẫu)" loading="lazy"></div>
+        <div class="frame small"><img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=1200&auto=format&fit=crop" alt="Mặt số đồng hồ cận cảnh (ảnh mẫu)" loading="lazy"></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="bao-duong" class="services">
+    <div class="wrap">
+      <p class="eyebrow">Dịch vụ bảo dưỡng</p>
+      <h2>Chăm đồng hồ như ngày đầu</h2>
+      <div class="grid" style="margin-top:32px">
+        <article class="card"><div class="frame"><img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?q=80&w=1200&auto=format&fit=crop" alt="Bộ máy cơ cần bảo dưỡng (ảnh mẫu)" loading="lazy"></div><div class="card-body"><h3>Lau dầu, bảo dưỡng định kỳ</h3><p>Vệ sinh và tra dầu bộ máy, kiểm tra độ kín nước.</p><p class="price">1.200.000 ₫</p><p class="note">Giá mẫu</p></div></article>
+        <article class="card"><div class="frame"><img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=1200&auto=format&fit=crop" alt="Thợ đang sửa chữa đồng hồ (ảnh mẫu)" loading="lazy"></div><div class="card-body"><h3>Sửa chữa, thay linh kiện</h3><p>Thay linh kiện hao mòn, căn chỉnh lại sau sửa chữa.</p><p class="price">Từ 800.000 ₫</p><p class="note">Giá mẫu</p></div></article>
+        <article class="card"><div class="frame"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop" alt="Đồng hồ sau bảo dưỡng, dây da mới (ảnh mẫu)" loading="lazy"></div><div class="card-body"><h3>Thay dây, đánh bóng vỏ</h3><p>Thay dây da, làm sạch và đánh bóng vỏ nhẹ nhàng.</p><p class="price">450.000 ₫</p><p class="note">Giá mẫu</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="lien-he" class="contact">
+    <div class="wrap"><div class="grid">
+      <div>
+        <p class="eyebrow">Liên hệ / đặt lịch hẹn</p>
+        <h2>Ghé xưởng, xem máy thật</h2>
+        <p>Địa chỉ: [CẦN BỔ SUNG]</p>
+        <p>Số điện thoại: [CẦN BỔ SUNG]</p>
+        <p class="note">Form bên cạnh chỉ làm giao diện demo — chưa gửi dữ liệu thật.</p>
+      </div>
+      <form id="contactForm">
+        <div><label for="name">Họ tên</label><input id="name" name="name" type="text" required placeholder="Họ tên của bạn"></div>
+        <div><label for="phone">Số điện thoại</label><input id="phone" name="phone" type="tel" required placeholder="Số điện thoại của bạn"></div>
+        <div><label for="model">Mẫu quan tâm</label><select id="model" name="model"><option>Kim Giờ Cổ Điển</option><option>Kim Giờ Atelier</option><option>Kim Giờ Đêm</option><option>Kim Giờ Hành Trình</option><option>Dịch vụ bảo dưỡng</option></select></div>
+        <div><label for="date">Ngày hẹn mong muốn</label><input id="date" name="date" type="date"></div>
+        <button class="btn" type="submit">Gửi yêu cầu (bản demo)</button>
+        <p class="demo-msg" id="demoMsg">Bản demo — form chưa gửi dữ liệu thật.</p>
+      </form>
+    </div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--ink)">Kim Giờ</strong> — tiệm đồng hồ thủ công · <a href="#bo-suu-tap">Bộ sưu tập</a> · <a href="#quy-trinh">Quy trình</a> · <a href="#cau-chuyen">Câu chuyện</a> · <a href="#bao-duong">Bảo dưỡng</a> · <a href="#lien-he">Liên hệ</a></p>
+    <p>Thông tin liên hệ thật: [CẦN BỔ SUNG]. Mọi ảnh trên trang đều là ảnh mẫu.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click', function(){
+  var m = document.getElementById('menu');
+  var open = m.classList.toggle('open');
+  this.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.querySelectorAll('#menu a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.getElementById('menu').classList.remove('open');
+    document.getElementById('menuBtn').setAttribute('aria-expanded','false');
+  });
+});
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('demoMsg').style.display = 'block';
+});
+</script>
+</body>
+</html>
